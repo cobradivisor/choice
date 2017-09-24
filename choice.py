@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+import sys
 import csv
 
 def _process_choices(row):
@@ -59,10 +59,9 @@ def start_game(s):
 
     print "Goodbye"
 
-def main():
-    print "start"
-    start_game("tests/erics_first_story.csv")
+def main(story_file):
+    start_game(story_file)
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1])
 
