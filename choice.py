@@ -18,7 +18,7 @@ def _process_row(row):
 def load_choices(s):
     choices = {}
     with open(s,'r') as csvfile:
-        csvreader = csv.reader(csvfile)
+        csvreader = csv.reader(csvfile, delimiter=':')
         for row in csvreader:
             choice_id = int(row[0])
             entry = _process_row(row)
