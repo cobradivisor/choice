@@ -1,0 +1,8 @@
+1,Welcome to the NDNC demo. Do you wish to proceed?,no,2,yes,3
+2,Ok goodbye!,restart?,1
+3,Very well lets start.,yes,4
+4,You are a normal person in a normal city. are you a guy or a girl?, guy,5,girl,6
+5,well since today is a very normal day you proceed to do guy things.,next,7
+6,well since today is a very normal day you proceed to do girl things.,next,7
+7,you peer over your window and see some thing very strange. everybodys doors are open but there is no one in the houses. Nor out and about. you decide to take a look.,next,8 ,no I dont,9
+8,
