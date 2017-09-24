@@ -37,8 +37,7 @@ def _read_input(msg):
 
 def _print_story(d, step_id):
     step = d[step_id]
-    print step['text']
-
+    print step['text'].replace('\\n', '\n')
     print ""
 
     choice_list = {} 
