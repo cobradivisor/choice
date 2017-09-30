@@ -2,7 +2,7 @@ import os
 import pytest
 import choice
 
-def test_load_choices():
+def test_load_choices_with_no_choice_mark():
     test_directory = os.path.dirname(os.path.abspath(__file__))
     test_file = test_directory + "/test_choices.csv"
     choices = choice.load_choices(test_file)
@@ -21,3 +21,17 @@ def test_start_game_exits_when_0_input_for_choice(capsys):
     choice.start_game(test_file)
     out,_ = capsys.readouterr()
     assert "Goodbye" in out
+
+def test_load_choices_with_choice_mark_no_additional_fields():
+    test_directory = os.path.dirname(os.path.abspath(__file__))
+    test_file = test_directory + "/test_choices_with_choice_mark_no_additional_fields.csv"
+    choices = choice.load_choices(test_file)
+    expected_choices = { 1 : { 'text' : "a long time ago", 'choices' : [ ( 'yes', 2 ), ('no',3) ] }}   
+    assert expected_choices == choices
+
+def test_load_choices_with_choice_mark():
+    test_directory = os.path.dirname(os.path.abspath(__file__))
+    test_file = test_directory + "/test_choices_with_choice_mark.csv"
+    choices = choice.load_choices(test_file)
+    expected_choices = { 1 : { 'text' : "a long time ago", 'html' : 'tests/pic.png', 'sound' : 'tests/sound.mp3','choices' : [ ( 'yes', 2 ), ('no',3) ] }}   
+    assert expected_choices == choices
