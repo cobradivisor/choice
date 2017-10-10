@@ -35,9 +35,10 @@ def load_choices(s):
     with open(s,'r') as csvfile:
         csvreader = csv.reader(csvfile, delimiter=':')
         for row in csvreader:
-            choice_id = int(row.pop(0))
-            entry = _process_row(row)
-            choices[choice_id] = entry
+            if len(row) > 1:
+                choice_id = int(row.pop(0))
+                entry = _process_row(row)
+                choices[choice_id] = entry
     
     return choices
 

@@ -35,3 +35,8 @@ def test_load_choices_with_choice_mark():
     choices = choice.load_choices(test_file)
     expected_choices = { 1 : { 'text' : "a long time ago", 'html' : 'tests/pic.png', 'sound' : 'tests/sound.mp3','choices' : [ ( 'yes', 2 ), ('no',3) ] }}   
     assert expected_choices == choices
+
+def test_load_choices_ignores_lines_that_start_with_new_line():
+    test_directory = os.path.dirname(os.path.abspath(__file__))
+    test_file = test_directory + "/test_ends_with_new_lines_and_spaces.csv"
+    choices = choice.load_choices(test_file)
