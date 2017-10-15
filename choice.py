@@ -2,6 +2,7 @@
 import sys
 import csv
 import webbrowser
+import random
 from pygame import mixer
 from collections import deque
 
@@ -86,8 +87,10 @@ def _print_story(d, step_id,previous_step_id):
 
 def _check_for_passthrough_step(choice_dict,step_id):
     step = choice_dict[step_id]
-    if "pass" in step:
-        return int(step["pass"])
+    if "random" in step:
+        possible_choices = step["random"].split(",")
+        choice = random.choice(possible_choices)
+        return int(choice)
     return step_id
 
 def start_game(s):
