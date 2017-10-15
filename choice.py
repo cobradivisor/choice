@@ -84,12 +84,19 @@ def _print_story(d, step_id,previous_step_id):
     choice_selected = _read_input("Enter Choice: ")
     return ('none',0) if choice_selected is 0 else choice_list[choice_selected]
 
+def _check_for_passthrough_step(choice_dict,step_id):
+    step = choice_dict[step_id]
+    if "pass" in step:
+        return int(step["pass"])
+    return step_id
+
 def start_game(s):
     choice_dict = load_choices(s)
     choice_deque = deque([0])
     step_id = 1 
     previous_step_id = 0
     while(step_id != 0):
+        step_id = _check_for_passthrough_step(choice_dict,step_id)
         choice_text,new_step_id = _print_story(choice_dict,step_id, previous_step_id)
         if choice_text == "Go Back" and len(choice_deque) > 1:
             choice_deque.popleft()
