@@ -8,8 +8,9 @@ from collections import deque
 def _process_choices(row):
     choices = []
     for choice, next_step in zip(row[::2], row[1::2] ):
-        item = (choice, int(next_step))
-        choices.append(item)
+        if next_step:
+            item = (choice, int(next_step))
+            choices.append(item)
     return choices
 
 def _process_additional_field(field,item):
@@ -69,6 +70,7 @@ def _print_story(d, step_id,previous_step_id):
     _execute_actions(step)
 
     choice_list = {} 
+    num=0
     for num,choice in enumerate(step['choices'],start=1):
        choice_list[num] = choice
     
