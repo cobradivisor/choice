@@ -41,7 +41,7 @@ def test_load_choices_ignores_lines_that_start_with_new_line():
     test_file = test_directory + "/test_ends_with_new_lines_and_spaces.csv"
     choices = choice.load_choices(test_file)
 
-def test_load_choices_with_choice_mark():
+def test_load_choices_with_pass_through_step():
     test_directory = os.path.dirname(os.path.abspath(__file__))
-    test_file = test_directory + "/test_choice_with_no_choices_allowed.csv"
+    test_file = test_directory + "/test_pass_through_step.csv"
     choices = choice.load_choices(test_file)
