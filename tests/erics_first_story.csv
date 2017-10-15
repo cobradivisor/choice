@@ -7,3 +7,6 @@
 7:you peer over your window and see some thing very strange. everybodys doors are open but there is no one in the houses. Nor out and about. you decide to take a look.:next:8
 8:You walk out side, and you look around. Still there was nobody around! Mabey you should do some investigating, or explore some more?:explore.:9: look around.:10
 9:You walk around the street and see nothing. Then you notice smoke coming up from one of the houses! You rush over, but it is too late. The ashes swirl around and land on the ground. They spell a message   ONE DOWN LOTS TO GO \n\n\n huh? \n\n\n this is a very odd day.:next:10
+10:You decide to go into your neighbor, Barry's house. As you walk inside you see a note on the table.this note seems suspicios. Do you do what it says?:html#pics/note.png:@:yes:12:no:11
+11: You decide to ignore the note and explore on your own. Maybe the note is a trap to.:next:13
+12: You decide to do what it says.:next:14
