@@ -10,3 +10,5 @@
 10:You decide to go into your neighbor, Barry's house. As you walk inside you see a note on the table.this note seems suspicios. Do you do what it says?:html#pics/note.png:@:yes:12:no:11
 11: You decide to ignore the note and explore on your own. Maybe the note is a trap to.:next:13
 12: You decide to do what it says.:next:14
+13: As you walk around, you notice something odd in the distance. You run toward it and see that its a high brick wall. Also, there is a door on the side of the wall.:15:Use door.:16:walk away.
+
