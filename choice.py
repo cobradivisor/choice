@@ -10,8 +10,15 @@ def _process_choices(row):
     choices = []
     for choice, next_step in zip(row[::2], row[1::2] ):
         if next_step:
-            item = (choice, int(next_step))
-            choices.append(item)
+            try:
+                item = (choice, int(next_step))
+            except ValueError:
+                print "Error reading choice " + str(row)
+                print "Choice list should be [Choice]:[step]"
+                print "Example - yes:3"  
+                sys.exit()
+            else:
+                choices.append(item)
     return choices
 
 def _process_additional_field(field,item):

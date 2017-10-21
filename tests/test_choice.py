@@ -45,3 +45,10 @@ def test_load_choices_with_pass_through_step():
     test_directory = os.path.dirname(os.path.abspath(__file__))
     test_file = test_directory + "/test_pass_through_step.csv"
     choices = choice.load_choices(test_file)
+
+def test_catch_excepetion_and_output_line_if_csv_not_valid(capsys):
+    test_directory = os.path.dirname(os.path.abspath(__file__))
+    test_file = test_directory + "/test_invalid_choice.csv"
+    choice.load_choices(test_file)
+    out,_ = capsys.readouterr()
+    assert "Error reading choice" in out
